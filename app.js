@@ -63,26 +63,22 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`${apiUrl}/${title}`, {
             method: 'DELETE'
         })
-        .then(response => response.text())  // Läs svaret som text först
+        .then(response => response.text()) 
         .then(text => {
             let data;
             try {
-                // Försök att parsa texten som JSON, om det inte är JSON kommer det att kasta ett fel
                 data = JSON.parse(text);
             } catch (error) {
-                // Om vi inte kan parsa, betyder det att svaret är vanlig text
                 data = { message: text };
             }
     
-            // Visa resultatet av operationen, oavsett om det är JSON eller text
             alert('Svar från servern: ' + data.message);
     
-            document.getElementById('deleteForm').reset(); // Rensa formuläret
+            document.getElementById('deleteForm').reset();
         })
         .catch(error => {
-            // Om ett fel inträffar vid hämtning eller hantering av svaret
             alert('Fel vid borttagning av ASCII-konst: ' + error.message);
-            console.error('Error:', error); // Logga felet för att se detaljer
+            console.error('Error:', error);
         });
     });
 
@@ -95,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 data.forEach(ascii => {
                     const div = document.createElement('div');
                     div.classList.add('ascii-art'); 
-                    div.innerHTML = `<h3>${ascii.title} (${ascii.artist})</h3><pre>${ascii.art}</pre>`;
+                    div.innerHTML = `<h3>${ascii.title} (Artist: ${ascii.artist})</h3><br><pre>${ascii.art}</pre><br>`;
                     asciiList.appendChild(div); 
                 });
             })

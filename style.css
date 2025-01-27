@@ -153,9 +153,12 @@ button:hover {
     padding: 12px 25px;
 }
 
-#searchForm input[type="text"],
 #deleteAsciiForm input[type="text"] {
-    margin-bottom: 5px; 
+    margin-bottom: 0px; 
+}
+
+#searchForm input[type="text"]{
+    margin-bottom: 10px; 
 }
 
 #searchResult pre {
@@ -178,4 +181,9 @@ button:hover {
     font-family: 'Courier New', Courier, monospace; 
     font-size: 12px; 
     line-height: 1.2; 
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
