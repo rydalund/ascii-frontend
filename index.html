@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/ascii.png" type="image/png">
+</head>
+<body>
+    <div id="header">
+        <h1>ASCII Art Manager</h1>
+    </div>
+
+    <div id="maincontent">
+        <div id="createAsciiForm">
+            <h2>Skapa ny ASCII-konst</h2>
+            <form id="createForm">
+                <label for="artist">Artist:</label>
+                <input type="text" id="artist" name="artist" required><br>
+
+                <label for="title">Titel:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="art">ASCII-konst:</label>
+                <textarea id="art" name="art" rows="10" required></textarea><br>
+
+                <button type="submit">Skapa</button>
+            </form>
+        </div>
+
+        <div id="searchForm">
+            <h2>Sök efter ASCII-konst</h2>
+            <form id="searchTitleForm">
+                <label for="searchTitle">Titel:</label>
+                <input type="text" id="searchTitle" name="searchTitle" required>
+                <button type="submit">Sök</button>
+            </form>
+            <div id="searchResult"></div>
+        </div>
+
+        <div id="deleteAsciiForm">
+            <h2>Ta bort ASCII-konst</h2>
+            <form id="deleteForm">
+                <label for="deleteTitle">Titel att ta bort:</label>
+                <input type="text" id="deleteTitle" name="deleteTitle" required><br>
+                <button type="submit">Ta bort</button>
+            </form>
+        </div>
+
+
+        <div id="viewAllAsciis">
+            <button id="viewAllButton">
+                <pre>
+    __     ___                   _ _   _                   _           
+    \ \   / (_)___  __ _    __ _| | | | | _____  _ __  ___| |_         
+     \ \ / /| / __|/ _` |  / _` | | | | |/ / _ \| '_ \/ __| __|        
+      \ V / | \__ \ (_| | | (_| | | | |   < (_) | | | \__ \ |_   _ _ _ 
+       \_/  |_|___/\__,_|  \__,_|_|_| |_|\_\___/|_| |_|___/\__| (_|_|_)
+                </pre>
+            </button>
+            <div id="asciiList"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2025 ASCII Art Manager</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
